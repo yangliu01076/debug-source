@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.TUserMapper">
+
+    <select id="selectById" resultType="org.example.entity.TUserDO">
+        SELECT id, name, age FROM t_user WHERE id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insert" parameterType="org.example.entity.TUserDO">
+        INSERT INTO t_user (name, age) VALUES (#{name}, #{age})
+    </insert>
+
+    <select id="selectListByName" resultType="org.example.entity.TUserDO">
+        SELECT id, name, age FROM t_user WHERE name = #{name,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectListByNameList" resultType="org.example.entity.TUserDO">
+        SELECT id, name, age FROM t_user WHERE name IN
+        <foreach collection="list" item="name" open="(" separator="," close=")">
+            #{name,javaType=java.lang.String,jdbcType=VARCHAR}
+        </foreach>
+    </select>
+
+</mapper>

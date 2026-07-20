@@ -14,9 +14,9 @@
             <dataSource type="POOLED">
                 <!-- 修改下面的 url, username, password -->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/testdb?useSSL=false&amp;serverTimezone=Asia/Shanghai"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test_db?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;characterEncoding=utf8"/>
                 <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="password" value="362597"/>
             </dataSource>
         </environment>
     </environments>

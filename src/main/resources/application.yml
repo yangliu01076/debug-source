@@ -1,0 +1,43 @@
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+    logger: slf4j
+  protocol:
+    name: tri
+    port: -1
+  registry:
+    address: zookeeper://127.0.0.1:2181
+spring:
+  main:
+    allow-circular-references: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 362597
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    # 打印 Spring 事务和底层数据源的日志
+    org.springframework.jdbc: DEBUG
+    org.mybatis.spring: DEBUG
+    # 打印 MyBatis 核心 SQL 解析日志
+    org.apache.ibatis: DEBUG
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    # 打印 SQL 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+hello:
+  age: 18
+  name: duoyian
+  address:
+    province: 广东省
+    city: 广州市
+    street: 天河区
+
+sms:
+  prefix: 【某某公司】
+  suffix: 请勿回复
