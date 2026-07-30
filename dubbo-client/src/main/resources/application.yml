@@ -1,0 +1,11 @@
+server:
+  port: 12346
+dubbo:
+  application:
+    name: dubbo-consumer
+  registry:
+    address: N/A
+  consumer:
+    timeout: 10000  # 增加到 10 秒
+  metadata-report:
+    timeout: 10000  # 元数据报告超时

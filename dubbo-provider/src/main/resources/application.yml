@@ -1,0 +1,16 @@
+server:
+  port: 12345
+dubbo:
+  application:
+    name: dubbo-provider
+  registry:
+    address: N/A
+  protocol:
+    name: dubbo
+    host: 127.0.0.1
+    port: 20880
+    threadpool: fixed
+    threads: 200  # 增加线程数
+    iothreads: 8  # 增加 IO
+  scan:
+    base-packages: com.my.service.impl
